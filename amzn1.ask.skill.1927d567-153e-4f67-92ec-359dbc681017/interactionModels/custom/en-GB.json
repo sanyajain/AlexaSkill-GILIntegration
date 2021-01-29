@@ -1,0 +1,161 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "gilexa",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "slots": [],
+          "samples": [
+            "hello",
+            "how are you",
+            "say hi world",
+            "say hi",
+            "hi",
+            "say hello world",
+            "say hello"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "ProductIntent",
+          "slots": [
+            {
+              "name": "product",
+              "type": "ProductNameLiteral"
+            }
+          ],
+          "samples": [
+            "I want to buy the {product}",
+            "I want to buy an {product}",
+            "I want to buy a {product}",
+            "I want to buy {product} book",
+            "I want to buy {product}",
+            "I want to purchase {product}",
+            "Show me the top results for {product}",
+            "I want to see {product} results"
+          ]
+        },
+        {
+          "name": "AddItemToCartIntent",
+          "slots": [
+            {
+              "name": "product",
+              "type": "ProductNameLiteral"
+            }
+          ],
+          "samples": [
+            "Add {product} to cart",
+            "Add the {product} to cart",
+            "Add this {product} to cart"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "samsung tablet"
+              }
+            },
+            {
+              "name": {
+                "value": "samsung t.v."
+              }
+            },
+            {
+              "name": {
+                "value": "Harry Potter"
+              }
+            },
+            {
+              "name": {
+                "value": "Animal"
+              }
+            },
+            {
+              "name": {
+                "value": "Samsung"
+              }
+            },
+            {
+              "name": {
+                "value": "Animal Farm"
+              }
+            },
+            {
+              "name": {
+                "value": "Samsung TV"
+              }
+            },
+            {
+              "name": {
+                "value": "ipad"
+              }
+            },
+            {
+              "name": {
+                "value": "iphone"
+              }
+            }
+          ],
+          "name": "ProductNameLiteral"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "ProductIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "product",
+              "type": "ProductNameLiteral",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1273265638863.72727435042"
+              }
+            }
+          ],
+          "delegationStrategy": "ALWAYS"
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1273265638863.72727435042",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Installments options are not available on this product."
+          }
+        ]
+      }
+    ]
+  },
+  "version": "19"
+}
